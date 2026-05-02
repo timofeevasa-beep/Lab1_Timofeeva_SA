@@ -128,9 +128,23 @@ if __name__ == "__main__":
         ("-5", "5", "5"),     # Отрицательные числа
     ]
     
+    print("="*60)
+    print("ТЕСТИРОВАНИЕ ПРОГРАММЫ ОПРЕДЕЛЕНИЯ ТРЕУГОЛЬНИКА")
+    print("="*60)
+    
     for sides in test_cases:
-        print("\n" + "="*50)
+        print("\n" + "-"*40)
         print(f"Входные данные: {sides}")
         result_type, coords = analyzer.process_request(*sides)
-        print(f"Тип: {result_type if result_type else 'ошибка'}")
-        print(f"Координаты: {coords}")
+        if result_type:
+            print(f"✓ Тип: {result_type}")
+        else:
+            print("✗ Ошибка: невалидные входные данные")
+        print(f"  Координаты вершин:")
+        print(f"    Вершина A: {coords[0]}")
+        print(f"    Вершина B: {coords[1]}")
+        print(f"    Вершина C: {coords[2]}")
+    
+    print("\n" + "="*60)
+    print("Тестирование завершено. Проверьте файл triangle.log")
+    print("="*60)
