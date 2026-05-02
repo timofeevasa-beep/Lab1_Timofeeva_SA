@@ -65,10 +65,6 @@ class TriangleAnalyzer:
         B = (self.canvas_size, 0)
         
         # Вычисляем координаты третьей вершины по формулам
-        # x = (a^2 - b^2 + c^2) / (2c) * canvas_size / c
-        # y = sqrt(a^2 - x^2)
-        
-        # Масштабирование: используем максимальную сторону как базу
         max_side = max(a, b, c)
         scale = self.canvas_size / max_side
         
